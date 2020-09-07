@@ -1,0 +1,12 @@
+{
+  "name": "git-burn",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Mitchell Fragala <ms.fragala@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "execa": "^4.0.3",
+    "prompts": "^2.3.2",
+    "sade": "^1.7.3"
+  }
+}
