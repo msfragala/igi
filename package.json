@@ -1,12 +1,32 @@
 {
-  "name": "git-burn",
-  "version": "1.0.0",
-  "main": "index.js",
-  "author": "Mitchell Fragala <ms.fragala@gmail.com>",
-  "license": "MIT",
-  "dependencies": {
-    "execa": "^4.0.3",
-    "prompts": "^2.3.2",
-    "sade": "^1.7.3"
-  }
+   "name": "git-burn",
+   "version": "1.0.0",
+   "main": "index.js",
+   "author": "Mitchell Fragala <ms.fragala@gmail.com>",
+   "license": "MIT",
+   "bin": {
+      "git-burn": "index.js"
+   },
+   "engines": {
+      "node": ">=8"
+   },
+   "files": [
+      "index.js",
+      "package.json"
+   ],
+   "keywords": [
+      "git",
+      "branch",
+      "delete",
+      "interactive"
+   ],
+   "dependencies": {
+      "execa": "^4.0.3",
+      "kleur": "^4.1.1",
+      "prompts": "^2.3.2",
+      "sade": "^1.7.3"
+   },
+   "devDependencies": {
+      "prettier": "^2.1.1"
+   }
 }
