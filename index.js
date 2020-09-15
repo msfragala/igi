@@ -11,55 +11,34 @@ const fail = (message, error) => {
    process.exit(1);
 };
 
-const program = sade('git-burn', true)
-   .version(version)
-   .describe('Delete local branches via an interactive menu')
-   .action(async () => {
-      const res = await execa('git', ['branch']).catch(error =>
-         fail('Error getting branch names', error)
-      );
+const program = sade('igi', true).version(version);
 
-      let currentBranch;
-      const branches = res.stdout.split('\n').map(branch => {
-         const name = branch.replace('*', '').trim();
-         if (branch.includes('*')) currentBranch = name;
-         return name;
-      });
+program
+   .command('cherry-pick')
+   .describe('')
+   .action(() => require('./cherry-pick')());
 
-      const { choices } = prompts({
-         type: 'multiselect',
-         name: 'choices',
-         message: 'Which branches do you want to delete?',
-         instructions: false,
-         choices: branches.map(name => ({
-            disabled: name === currentBranch,
-            title: name === currentBranch ? `${name} (current)` : name,
-            value: name,
-         })),
-         hint: 'Space to select. Return to submit\n',
-      }).catch(error => {
-         fail('Error prompting branches to delete', error);
-      });
+program.command('delete').command('branch');
+program.command('delete').command('tag');
 
-      if (!choices || !choices.length) {
-         fail(yellow('No branches selected'));
-      }
+program
+   .command('checkout')
+   .describe('')
+   .action(() => require('./checkout')());
 
-      const result = await execa('git', ['branch', '-D', ...choices]).catch(
-         error => {
-            fail('Error deleting branches', error);
-         }
-      );
+program
+   .command('rebase')
+   .describe('')
+   .action(() => require('./rebase')());
 
-      if (result.exitCode !== 0) {
-         fail('Error deleting branches', result.stdout);
-      }
+program
+   .command('branch-delete')
+   .describe('')
+   .action(() => require('./delete-branch')());
 
-      console.log(
-         `${green(
-            'Successfully deleted the following branches:'
-         )}\n\n${choices.join('\n')}`
-      );
-   });
+program
+   .command('merge')
+   .describe('')
+   .action(() => require('./merge')());
 
 program.parse(process.argv);

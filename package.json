@@ -1,11 +1,15 @@
 {
-   "name": "git-burn",
+   "name": "igi",
    "version": "1.0.0",
-   "main": "index.js",
    "author": "Mitchell Fragala <ms.fragala@gmail.com>",
    "license": "MIT",
+   "main": "dist/igi.js",
+   "scripts": {
+      "build": "microbundle --format cjs --target node",
+      "dev": "yarn build watch"
+   },
    "bin": {
-      "git-burn": "index.js"
+      "igi": "index.js"
    },
    "engines": {
       "node": ">=8"
@@ -27,6 +31,9 @@
       "sade": "^1.7.3"
    },
    "devDependencies": {
+      "@types/execa": "^2.0.0",
+      "@types/prompts": "^2.0.9",
+      "microbundle": "^0.12.3",
       "prettier": "^2.1.1"
    }
 }
