@@ -34,7 +34,4 @@ program
    .describe('')
    .action(() => import('./lib/merge').then(run));
 
-// deleteCommand.command('branch');
-// deleteCommand.command('tag');
-
 program.parse(process.argv);

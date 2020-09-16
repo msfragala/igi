@@ -1,6 +1,6 @@
 import execa from 'execa';
 import prompts from 'prompts';
-import { log } from '../utils/fail';
+import { log } from '../utils/log';
 import { getTags } from '../utils/get-tags';
 
 export default async () => {

@@ -1,11 +1,13 @@
 {
    "name": "igi",
-   "version": "1.0.0",
+   "version": "0.0.0",
    "author": "Mitchell Fragala <ms.fragala@gmail.com>",
    "license": "MIT",
    "main": "dist/igi.js",
+   "source": "src/index.ts",
    "scripts": {
-      "build": "microbundle --format cjs --target node",
+      "clean": "rm -rf dist",
+      "build": "yarn clean && rollup -c",
       "dev": "yarn build watch"
    },
    "bin": {
@@ -15,7 +17,7 @@
       "node": ">=8"
    },
    "files": [
-      "index.js",
+      "dist",
       "package.json"
    ],
    "keywords": [
@@ -31,9 +33,16 @@
       "sade": "^1.7.3"
    },
    "devDependencies": {
+      "@rollup/plugin-commonjs": "^15.0.0",
+      "@rollup/plugin-json": "^4.1.0",
+      "@rollup/plugin-node-resolve": "^9.0.0",
+      "@rollup/plugin-typescript": "^6.0.0",
       "@types/execa": "^2.0.0",
       "@types/prompts": "^2.0.9",
-      "microbundle": "^0.12.3",
-      "prettier": "^2.1.1"
+      "np": "^6.5.0",
+      "prettier": "^2.1.1",
+      "rollup": "^2.26.11",
+      "rollup-plugin-node-externals": "^2.2.0",
+      "rollup-plugin-terser": "^7.0.2"
    }
 }

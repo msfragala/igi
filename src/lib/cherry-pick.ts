@@ -1,6 +1,6 @@
 import { getBranches } from '../utils/get-branches';
 import prompts from 'prompts';
-import { log } from '../utils/fail';
+import { log } from '../utils/log';
 import execa from 'execa';
 import { getCommits } from '../utils/get-commits';
 

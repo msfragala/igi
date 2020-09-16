@@ -1,5 +1,5 @@
 import execa from 'execa';
-import { fail } from './fail';
+import { log } from './log';
 
 type Branch = {
    name: string;
@@ -8,7 +8,7 @@ type Branch = {
 
 export async function getBranches(): Promise<Branch[]> {
    const res = await execa('git', ['branch']).catch(error =>
-      fail('Error getting branch names', error)
+      log.panic('Error getting branch names', error)
    );
 
    return res.stdout.split('\n').map(line => ({

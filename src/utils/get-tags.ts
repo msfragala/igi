@@ -1,5 +1,5 @@
 import execa from 'execa';
-import { fail } from './fail';
+import { log } from './log';
 
 type Tag = {
    name: string;
@@ -7,7 +7,7 @@ type Tag = {
 
 export async function getTags(): Promise<Tag[]> {
    const res = await execa('git', ['tag', '--list']).catch(error =>
-      fail('Error getting tags', error)
+      log.panic('Error getting tags', error)
    );
 
    return res.stdout.split('\n').map(line => ({

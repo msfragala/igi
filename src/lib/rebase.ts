@@ -1,6 +1,6 @@
 import execa from 'execa';
 import prompts from 'prompts';
-import { log } from '../utils/fail';
+import { log } from '../utils/log';
 import { getBranches } from '../utils/get-branches';
 
 export default async () => {
