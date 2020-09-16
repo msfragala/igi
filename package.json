@@ -1,6 +1,6 @@
 {
    "name": "igi",
-   "version": "0.0.0",
+   "version": "0.1.0",
    "author": "Mitchell Fragala <ms.fragala@gmail.com>",
    "license": "MIT",
    "main": "dist/igi.js",
@@ -12,7 +12,7 @@
       "publish": "np --no-tests"
    },
    "bin": {
-      "igi": "index.js"
+      "igi": "dist/igi.js"
    },
    "engines": {
       "node": ">=8"
