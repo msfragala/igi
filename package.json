@@ -9,7 +9,7 @@
       "clean": "rm -rf dist",
       "build": "yarn clean && rollup -c",
       "dev": "yarn build watch",
-      "publish": "np --no-tests"
+      "release": "np --no-tests"
    },
    "bin": {
       "igi": "dist/igi.js"
