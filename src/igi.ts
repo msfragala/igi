@@ -1,37 +1,45 @@
+#!/usr/bin/env node
+
 import sade from 'sade';
 import { version } from '../package.json';
+import cherryPick from './lib/cherry-pick';
+import checkout from './lib/checkout';
+import rebase from './lib/rebase';
+import deleteBranch from './lib/delete-branch';
+import deleteTag from './lib/delete-tag';
+import merge from './lib/merge';
 
 const program = sade('igi').version(version);
-const run = m => m.default();
-
-program
-   .command('cherry-pick')
-   .describe('')
-   .action(() => import('./lib/cherry-pick').then(run));
 
 program
    .command('checkout')
-   .describe('')
-   .action(() => import('./lib/checkout').then(run));
+   .describe('Select a branch to switch to')
+   .alias('switch')
+   .action(checkout);
 
 program
-   .command('rebase')
-   .describe('')
-   .action(() => import('./lib/rebase').then(run));
+   .command('cherry-pick')
+   .describe('Select a branch and commit whose changes to apply')
+   .action(cherryPick);
 
 program
    .command('delete branch')
-   .describe('')
-   .action(() => import('./lib/delete-branch').then(run));
+   .describe('Select branches to (force) delete')
+   .action(deleteBranch);
 
 program
    .command('delete tag')
-   .describe('')
-   .action(() => import('./lib/delete-tag').then(run));
+   .describe('Select tags to delete')
+   .action(deleteTag);
 
 program
    .command('merge')
-   .describe('')
-   .action(() => import('./lib/merge').then(run));
+   .describe('Select a branch to merge into the current branch')
+   .action(merge);
+
+program
+   .command('rebase')
+   .describe('Select a branch to reapply commits on top of')
+   .action(rebase);
 
 program.parse(process.argv);

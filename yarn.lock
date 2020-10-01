@@ -23,10 +23,10 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@rollup/plugin-commonjs@^15.0.0":
-  version "15.0.0"
-  resolved "https://registry.yarnpkg.com/@rollup/plugin-commonjs/-/plugin-commonjs-15.0.0.tgz#690d15a9d54ba829db93555bff9b98ff34e08574"
-  integrity sha512-8uAdikHqVyrT32w1zB9VhW6uGwGjhKgnDNP4pQJsjdnyF4FgCj6/bmv24c7v2CuKhq32CcyCwRzMPEElaKkn0w==
+"@rollup/plugin-commonjs@^15.1.0":
+  version "15.1.0"
+  resolved "https://registry.yarnpkg.com/@rollup/plugin-commonjs/-/plugin-commonjs-15.1.0.tgz#1e7d076c4f1b2abf7e65248570e555defc37c238"
+  integrity sha512-xCQqz4z/o0h2syQ7d9LskIMvBSH4PX5PjYdpSSvgS+pQik3WahkQVNWg3D8XJeYjZoVWnIUQYDghuEMRGrmQYQ==
   dependencies:
     "@rollup/pluginutils" "^3.1.0"
     commondir "^1.0.1"
@@ -1219,10 +1219,10 @@ kleur@^3.0.3:
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-3.0.3.tgz#a79c9ecc86ee1ce3fa6206d1216c501f147fc07e"
   integrity sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==
 
-kleur@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/kleur/-/kleur-4.1.1.tgz#80b49dd7d1afeba41b8dcdf4ecfff9252205fc52"
-  integrity sha512-BsNhM6T/yTWFG580CRnYhT3LfUuPK7Hwrm+W2H0G8lK/nogalP5Nsrh/cHjxVVkzl0sFm7z8b8rNcZCfKxeoxA==
+kleur@^4.1.3:
+  version "4.1.3"
+  resolved "https://registry.yarnpkg.com/kleur/-/kleur-4.1.3.tgz#8d262a56d79a137ee1b706e967c0b08a7fef4f4c"
+  integrity sha512-H1tr8QP2PxFTNwAFM74Mui2b6ovcY9FoxJefgrwxY+OCJcq01k5nvhf4M/KnizzrJvLRap5STUy7dgDV35iUBw==
 
 latest-version@^5.0.0:
   version "5.1.0"
@@ -1785,10 +1785,10 @@ prepend-http@^2.0.0:
   resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-2.0.0.tgz#e92434bfa5ea8c19f41cdfd401d741a3c819d897"
   integrity sha1-6SQ0v6XqjBn0HN/UAddBo8gZ2Jc=
 
-prettier@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.1.1.tgz#d9485dd5e499daa6cb547023b87a6cf51bee37d6"
-  integrity sha512-9bY+5ZWCfqj3ghYBLxApy2zf6m+NJo5GzmLTpr9FsApsfjriNnS2dahWReHMi7qNPhhHl9SYHJs2cHZLgexNIw==
+prettier@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.1.2.tgz#3050700dae2e4c8b67c4c3f666cdb8af405e1ce5"
+  integrity sha512-16c7K+x4qVlJg9rEbXl7HEGmQyZlG4R9AgP+oHKRMsMsuk8s+ATStlf1NpDqyBI1HpVyfjLOeMhH2LvuNvV5Vg==
 
 prompts@^2.3.2:
   version "2.3.2"
@@ -1932,6 +1932,13 @@ rollup-plugin-node-externals@^2.2.0:
   dependencies:
     find-up "^4.1.0"
 
+rollup-plugin-preserve-shebang@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-preserve-shebang/-/rollup-plugin-preserve-shebang-1.0.1.tgz#17109cdb4ed12c3cac9379b802182427cdbee5a1"
+  integrity sha512-gk7ExGBqvUinhgrvldKHkAKXXwRkWMXMZymNkrtn50uBgHITlhRjhnKmbNGwAIc4Bzgl3yLv7/8Fhi/XeHhFKg==
+  dependencies:
+    magic-string "^0.25.7"
+
 rollup-plugin-terser@^7.0.2:
   version "7.0.2"
   resolved "https://registry.yarnpkg.com/rollup-plugin-terser/-/rollup-plugin-terser-7.0.2.tgz#e8fbba4869981b2dc35ae7e8a502d5c6c04d324d"
@@ -1942,10 +1949,10 @@ rollup-plugin-terser@^7.0.2:
     serialize-javascript "^4.0.0"
     terser "^5.0.0"
 
-rollup@^2.26.11:
-  version "2.26.11"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.26.11.tgz#4fc31de9c7b83d50916fc8395f8c3d24730cdaae"
-  integrity sha512-xyfxxhsE6hW57xhfL1I+ixH8l2bdoIMaAecdQiWF3N7IgJEMu99JG+daBiSZQjnBpzFxa0/xZm+3pbCdAQehHw==
+rollup@^2.28.2:
+  version "2.28.2"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.28.2.tgz#599ec4978144a82d8a8ec3d37670a8440cb04e4b"
+  integrity sha512-8txbsFBFLmm9Xdt4ByTOGa9Muonmc8MfNjnGAR8U8scJlF1ZW7AgNZa7aqBXaKtlvnYP/ab++fQIq9dB9NWUbg==
   optionalDependencies:
     fsevents "~2.1.2"
 
@@ -1961,10 +1968,10 @@ rxjs@^6.3.3, rxjs@^6.4.0, rxjs@^6.5.3, rxjs@^6.5.4, rxjs@^6.6.0:
   dependencies:
     tslib "^1.9.0"
 
-sade@^1.7.3:
-  version "1.7.3"
-  resolved "https://registry.yarnpkg.com/sade/-/sade-1.7.3.tgz#a217ccc4fb4abb2d271648bf48f6628b2636fa1b"
-  integrity sha512-m4BctppMvJ60W1dXnHq7jMmFe3hPJZDAH85kQ3ACTo7XZNVUuTItCQ+2HfyaMeV5cKrbw7l4vD/6We3GBxvdJw==
+sade@^1.7.4:
+  version "1.7.4"
+  resolved "https://registry.yarnpkg.com/sade/-/sade-1.7.4.tgz#ea681e0c65d248d2095c90578c03ca0bb1b54691"
+  integrity sha512-y5yauMD93rX840MwUJr7C1ysLFBgMspsdTo4UVrDg3fXDvtwOyIqykhVAAm6fk/3au77773itJStObgK+LKaiA==
   dependencies:
     mri "^1.1.0"
 
@@ -2293,10 +2300,10 @@ typedarray-to-buffer@^3.1.5:
   dependencies:
     is-typedarray "^1.0.0"
 
-typescript@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.0.2.tgz#7ea7c88777c723c681e33bf7988be5d008d05ac2"
-  integrity sha512-e4ERvRV2wb+rRZ/IQeb3jm2VxBsirQLpQhdxplZ2MEzGvDkkMmPglecnNDfSUBivMjP93vRbngYYDQqQ/78bcQ==
+typescript@^4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.0.3.tgz#153bbd468ef07725c1df9c77e8b453f8d36abba5"
+  integrity sha512-tEu6DGxGgRJPb/mVPIZ48e69xCn2yRmCgYmDugAVwmJ6o+0u1RI18eO7E7WBTLYLaEVVOhwQmcdhQHweux/WPg==
 
 unique-string@^2.0.0:
   version "2.0.0"
