@@ -9,7 +9,7 @@ export default async () => {
    const $branch = await prompts({
       type: 'select',
       name: 'value',
-      message: 'Choose a branch to rebase onto',
+      message: 'Choose a branch to merge',
       choices: branches.map(b => ({
          disabled: b.current,
          value: b.name,

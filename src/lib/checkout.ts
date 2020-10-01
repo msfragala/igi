@@ -9,7 +9,7 @@ export default async () => {
    const $branch = await prompts({
       type: 'select',
       name: 'value',
-      message: 'Choose a branch to check out',
+      message: 'Choose a branch to switch to',
       choices: branches.map(b => ({
          disabled: b.current,
          value: b.name,
