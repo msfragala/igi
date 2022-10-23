@@ -1,15 +1,14 @@
-import { getBranches } from '../utils/get-branches';
-import prompts from 'prompts';
-import { log } from '../utils/log';
+import { getBranches } from '@/utils/get-branches';
+import { log } from '@/utils/log';
 import execa from 'execa';
-import { getCommits } from '../utils/get-commits';
+import { getCommits } from '@/utils/get-commits';
+import { prompt } from '@/lib/prompt';
 
 export default async () => {
    const branches = await getBranches();
 
-   const $branch = await prompts({
+   const branch = await prompt<string>({
       type: 'select',
-      name: 'value',
       message: 'Choose a branch to select a commit from',
       choices: branches.map(b => ({
          disabled: b.current,
@@ -18,15 +17,14 @@ export default async () => {
       })),
    }).catch(error => log.panic('Error choosing branch', error));
 
-   if (!$branch?.value) {
+   if (!branch) {
       log.panic('No branch chosen');
    }
 
-   const commits = await getCommits($branch.value);
+   const commits = await getCommits(branch);
 
-   const $commit = await prompts({
+   const commit = await prompt<string>({
       type: 'select',
-      name: 'value',
       message: 'Choose a commit to cherry-pick',
       choices: commits.map(c => ({
          value: c.hash,
@@ -34,18 +32,17 @@ export default async () => {
       })),
    }).catch(error => log.panic('Error choosing commit', error));
 
-   if (!$commit?.value) {
+   if (!commit) {
       log.panic('No commit chosen');
    }
 
-   const $result = await execa('git', [
-      'cherry-pick',
-      $commit.value,
-   ]).catch(error => log.panic('Error cherry-picking commit', error));
+   const res = await execa('git', ['cherry-pick', commit]).catch(error =>
+      log.panic('Error cherry-picking commit', error)
+   );
 
-   if ($result.exitCode !== 0) {
+   if (res.exitCode !== 0) {
       log.panic('Error cherry-picking commit');
    }
 
-   log.success(`Cherry-picked commit ${$commit.value}`);
+   log.success(`Cherry-picked commit ${commit}`);
 };

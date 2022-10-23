@@ -1,20 +1,19 @@
-#!/usr/bin/env node
-
 import sade from 'sade';
 import { version } from '../package.json';
-import cherryPick from './lib/cherry-pick';
-import checkout from './lib/checkout';
-import rebase from './lib/rebase';
-import deleteBranch from './lib/delete-branch';
-import deleteTag from './lib/delete-tag';
-import merge from './lib/merge';
+import cherryPick from '@/commands/cherry-pick';
+import checkout from '@/commands/checkout';
+import rebase from '@/commands/rebase';
+import deleteBranch from '@/commands/delete-branch';
+import deleteTag from '@/commands/delete-tag';
+import merge from '@/commands/merge';
+import pruneBranches from '@/commands/prune-branches';
 
 const program = sade('igi').version(version);
 
 program
-   .command('checkout')
+   .command('switch')
    .describe('Select a branch to switch to')
-   .alias('switch')
+   .alias('checkout')
    .action(checkout);
 
 program
@@ -41,5 +40,10 @@ program
    .command('rebase')
    .describe('Select a branch to reapply commits on top of')
    .action(rebase);
+
+program
+   .command('prune-branches')
+   .describe('Delete local branches with no upstream')
+   .action(pruneBranches);
 
 program.parse(process.argv);

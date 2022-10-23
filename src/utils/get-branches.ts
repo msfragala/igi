@@ -1,7 +1,7 @@
 import execa from 'execa';
-import { log } from './log';
+import { log } from '@/utils/log';
 
-type Branch = {
+export type Branch = {
    name: string;
    current: boolean;
 };

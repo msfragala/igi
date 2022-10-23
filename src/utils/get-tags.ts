@@ -1,7 +1,7 @@
 import execa from 'execa';
-import { log } from './log';
+import { log } from '@/utils/log';
 
-type Tag = {
+export type Tag = {
    name: string;
 };
 

@@ -1,9 +1,13 @@
 {
    "compilerOptions": {
+      "baseUrl": ".",
       "module": "esnext",
       "moduleResolution": "node",
       "resolveJsonModule": true,
-      "esModuleInterop": true
+      "esModuleInterop": true,
+      "paths": {
+         "@/*": ["src/*"]
+      }
    },
    "exclude": ["dist"]
 }
