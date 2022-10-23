@@ -9,7 +9,8 @@
       "build:compile": "ncc build src/igi.ts",
       "build:package": "pkg . -o dist/igi",
       "build:tar": "tar -cvzf ./dist/igi.tar.gz ./dist/igi",
-      "release": "np --no-tests --no-publish"
+      "test": "npm run build",
+      "release": "np --no-publish"
    },
    "bin": {
       "igi": "dist/index.js"
