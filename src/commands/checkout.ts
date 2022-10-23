@@ -2,8 +2,11 @@ import execa from 'execa';
 import { getBranches } from '@/utils/get-branches';
 import { log } from '@/utils/log';
 import { prompt } from '@/lib/prompt';
+import { bypassCommand } from '@/lib/bypass-command';
 
 export default async () => {
+   await bypassCommand('switch');
+
    const branches = await getBranches();
 
    const branch = await prompt<string>({

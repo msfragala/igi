@@ -13,7 +13,6 @@ const program = sade('igi').version(version);
 program
    .command('switch')
    .describe('Select a branch to switch to')
-   .alias('checkout')
    .action(checkout);
 
 program

@@ -3,8 +3,11 @@ import { log } from '@/utils/log';
 import execa from 'execa';
 import { getCommits } from '@/utils/get-commits';
 import { prompt } from '@/lib/prompt';
+import { bypassCommand } from '@/lib/bypass-command';
 
 export default async () => {
+   await bypassCommand('cherry-pick');
+
    const branches = await getBranches();
 
    const branch = await prompt<string>({
