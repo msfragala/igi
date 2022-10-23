@@ -10,7 +10,7 @@
       "build:package": "pkg . -o dist/igi",
       "build:tar": "tar -cvzf ./dist/igi.tar.gz ./dist/igi",
       "test": "npm run build",
-      "release": "np --no-publish"
+      "release": "np --no-publish --no-yarn"
    },
    "bin": {
       "igi": "dist/index.js"
